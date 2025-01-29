@@ -1,1 +1,3 @@
-## This project is not even close to being finished
+## Obsistats - (kinda) working CLI tool for obsidian
+
+Why?
