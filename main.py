@@ -8,7 +8,7 @@ with open('data/personal.json') as f:
     personal = json.load(f)
 def listing(pile):
     for thing in pile:
-        print(thing)
+        print(thing, pile[thing])
 with open('data/locations.json') as f:
     dir = json.load(f)["vaults"][0]
     print(dir)

@@ -16,5 +16,5 @@ if __name__ == "__main__":
                 data[tag] = [[name, score]]
                 
         f.seek(0)
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4, ensure_ascii=False)
         f.truncate()

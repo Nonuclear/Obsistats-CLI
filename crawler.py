@@ -32,7 +32,7 @@ def crawl(path, results=None):
                 f.truncate()
             with open("data/logs.json", "r+") as f:
                 f.seek(0)
-                json.dump(logs, f, indent=4)
+                json.dump(logs, f, indent=4, ensure_ascii=False)
                 f.truncate()
             print(os.path.basename(path)+" was added")
             return {"title": os.path.basename(path).split(".")[0], "tags": tags}
