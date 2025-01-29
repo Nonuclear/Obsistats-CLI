@@ -1,4 +1,4 @@
 .vscode
-/data
-test.py
-todo.md
+server/data
+server/test.py
+stodo.md
