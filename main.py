@@ -33,7 +33,18 @@ while True:
         subprocess.run(["python", "crawler.py", dir])
     elif prompt == "wipe":
         subprocess.run(["python", "wipe_data.py"])
-    elif prompt == "list":
-        listing(personal)
+    elif prompt.startswith("list"):
+        data_path = prompt.split(" ")
+        if len(data_path) > 1:
+            with open(f"data/{prompt.split(" ")[-1]}.json") as f:
+                content = json.load(f)
+        else:
+            content = personal
+        listing(content)
+    elif prompt == "stats":
+        with open("data/tags.json", "r") as f:
+            f = json.load(f)
+            for tag in f:
+                print(tag+": "+str(len(f[tag])))
     else:
         print("invalid command, try \'help\'")
